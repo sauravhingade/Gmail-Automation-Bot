@@ -2,8 +2,8 @@ name: Run Gmail Automation Bot
 
 on:
   schedule:
-    - cron: "* * * * *"   # runs every minute
-  workflow_dispatch:      # allows manual run
+    - cron: "* * * * *"
+  workflow_dispatch:
 
 jobs:
   run-bot:
@@ -31,5 +31,4 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
-        run: |
-          python main.py
+        run: python main.py
